@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Practice</string>
+    <string name="data_loading_wait_please">数据加载中,请稍等…</string>
+    <string name="image_picker_complete">完成</string>
+    <string name="image_pick_count_prompt">一次性最多支持%s张图片</string>
+    <string name="image_pick_single_mode">你当前处于单选图片模式</string>
+    <string name="image_pick_count_prompt_ok">知道了</string>
+
+    <array name="list">
+        <item>C++</item>
+        <item>算法导论</item>
+        <item>操作系统</item>
+        <item>数据结构</item>
+        <item>Android 从入门到出门</item>
+    </array>
+
+    <string name="accessibility_service_description">what the fuck</string>
+</resources>

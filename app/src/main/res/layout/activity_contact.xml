@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/query_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系人"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/contact_list"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <EditText
+            android:id="@+id/contact_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="name" />
+        <EditText
+            android:id="@+id/contact_tel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="tel"/>
+        <EditText
+            android:id="@+id/contact_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="email"/>
+        <EditText
+            android:id="@+id/contact_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="address"/>
+        <Button
+            android:id="@+id/save_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存"/>
+    </LinearLayout>
+</ScrollView>

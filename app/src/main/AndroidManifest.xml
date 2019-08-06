@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.whx.practice">
+
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".leak.LeakActivity">
+
+        </activity>
+        <activity android:name=".intent.TestIntentActivity">
+
+        </activity>
+        <activity android:name=".intent.ShareActivity">
+            <!-- This activity handles "SEND" actions with the text data -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+            <!-- This activity also handles "SEND" and "SEND_MULTIPLE" with media data -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="application/vnd.google.panorama360+jpg"/>
+                <data android:mimeType="image/*"/>
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".intent.PhotoIntentActivity">
+
+        </activity>
+
+        <activity android:name=".task.Activity_X"
+            android:taskAffinity="com.whx.practice.hhh">
+
+        </activity>
+        <activity android:name=".task.Activity_Y"
+            android:taskAffinity="com.whx.practice.hhh">
+
+        </activity>
+        <activity android:name=".fragment.FragmentActivity">
+
+        </activity>
+        <activity android:name=".fragment.DetailActivity"/>
+        <activity android:name=".loader.LoaderTestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+        <activity android:name=".view.pager.ViewPagerActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".TestActivity">
+
+        </activity>
+
+        <activity android:name=".service.TestServiceActivity">
+
+        </activity>
+        <activity android:name=".service.JobServiceActivity">
+
+        </activity>
+        <activity android:name=".threadpool.act.ImagePickActivity">
+            <intent-filter>
+                <action android:name="com.whx.practice.ACTION_IMAGE_PICKER"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".threadpool.act.TakePhotoActivity">
+            <intent-filter >
+                <action android:name="com.whx.practice.ACTION_TAKE_PHOTO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".content.ContentTestActivity"
+            android:permission="com.whx.practice.content.READ"/>
+
+        <activity android:name=".content.ContactTestActivity">
+
+        </activity>
+
+        <activity android:name=".activity.PreferenceTestActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity android:name=".view.SimulateTouchActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <activity android:name=".view.dialog.TestDialogActivity"/>
+
+        <activity android:name=".countdown.TestCountdownActivity"/>
+
+        <service android:name=".service.TestService">
+
+        </service>
+        <service android:name=".service.TestIntentService">
+
+        </service>
+        <service android:name=".service.TestJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+
+        </service>
+        <service android:name=".service.JobWorkService">
+
+        </service>
+
+        <service
+            android:name=".view.accessibility.AccessibilityClickService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:label="fuck android">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config"/>
+        </service>
+
+        <service
+            android:name=".view.accessibility.AccessibilityBtnService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:label="accessibility button">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config"/>
+        </service>
+
+        <service android:name=".view.accessibility.AccessibilityGestureService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:label="accessibility gesture">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/gesture_service_config"/>
+        </service>
+
+        <provider
+            android:authorities="com.whx.practice.provider"
+            android:name=".content.MyContentProvider"
+            android:readPermission="com.whx.practice.content.READ"
+            android:writePermission="com.whx.practice.content.WRITE">
+
+            <path-permission>
+
+            </path-permission>
+        </provider>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,193 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'me.tatarka.retrolambda' //lambda need
+apply plugin: 'testPlugin'
+
+testPlugin {
+    filePath = projectDir.absolutePath + '/src'
+}
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.whx.practice"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables {
+            generatedDensities 'hdpi', 'xhdpi', 'xxhdpi'
+            useSupportLibrary = true
+        }
+    }
+    buildTypes {
+        debug {
+            pseudoLocalesEnabled = true
+            testCoverageEnabled = true
+            debuggable = true
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        myType {
+            initWith debug
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("myKey.keystore")
+            storePassword "123456"
+            keyAlias "MyReleaseKey"
+            keyPassword "123456"
+        }
+    }
+
+    flavorDimensions "demo1", "demo2"
+
+    productFlavors {
+//        demo {
+//            dimension "demo1"
+//            applicationIdSuffix = "demo"
+//
+//            ndk {
+//                abiFilters 'x86', 'x86_64', 'armeabi'
+//            }
+//
+//        }
+//
+//        full {
+//            dimension "demo1"
+//            applicationIdSuffix = "full"
+//        }
+//
+//        what {
+//            dimension "demo2"
+//            applicationIdSuffix = "what"
+//        }
+    }
+
+    sourceSets {
+        demo {
+            java.srcDirs = ['debug/java']
+        }
+    }
+
+    variantFilter { variant ->
+        def flavorNames = variant.flavors*.name
+        def typeNames = variant.buildType.name
+
+        if (flavorNames.contains("what") && flavorNames.contains("full")) {
+            setIgnore(true)
+        }
+
+        if (typeNames == "myType") {
+            setIgnore(true)
+        }
+    }
+    //lambda need
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    splits {
+        abi {
+
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+task sampleTask << {
+
+    String[] classes = ["CooperationGridAdapter.java","OnPriceFragmentChangedListener.java","BaseRecyclerAdapter.java","ServerConfig.java","Folder.java","SerializableUsingJson.java","CityBizArea.java","CreateContactRequestData.java","CreatePoiRequestData.java","Feedback.java","GiveupTag.java","ModifyPoiRequestData.java","Poi.java","PrivateQuota.java","RequestQuery.java","SimilarPoi.java","UpdateContactRequestData.java","UserOperateRequestData.java","UserRightOrderBean.java","PoiSelectSheetDialogFragment.java","LogoutListener.java","TaskListener.java","DealProductPoisBean.java","UpdateController.java","CharacterParser.java","DashboardIncreaseRateDialog.java"]
+
+    File files = new File(projectDir.absolutePath + '/src/main/java')
+
+    HashMap<String, String> res = new HashMap<>()
+
+    files.eachFileRecurse { File file ->
+        if (!file.isDirectory()) {
+            BufferedReader reader = new BufferedReader(new FileReader(file))
+            String line
+
+            while ((line = reader.readLine()) != null) {
+
+                for (String clazz : classes) {
+                    if (line.contains(clazz)) {
+                        res.put(file.name, clazz)
+                        break
+                    }
+                }
+            }
+
+        }
+    }
+
+    if (res.size() != 0) {
+        for (Map.Entry entry : res.entrySet()) {
+            println('Class : ' + entry.key + ' contains class : ' + entry.value)
+        }
+    } else {
+        println('no dependencies')
+    }
+}
+
+configurations {
+    demoWhatCompile {}
+
+//    all {
+//        transitive = false
+//    }
+//    all {
+//        resolutionStrategy {
+//            force 'com.android.support.test:runner:0.2'
+//        }
+//    }
+//
+//    all*.exclude group: 'com.android.support'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile 'com.android.support:support-compat:26.1.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:26.1.0'
+
+    compile "com.squareup.leakcanary:leakcanary-android:1.5.1"
+
+    // 图片框架
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    testCompile 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    compile 'com.google.code.gson:gson:2.8.0'
+
+//    demoWhatCompile project(path: ':mylibrary', configuration: 'debug')
+
+}
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+}

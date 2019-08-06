@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/insert_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/insert_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="insert"/>
+    <EditText
+        android:id="@+id/upd_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/upd_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="update"/>
+    <EditText
+        android:id="@+id/del_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/del_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete"/>
+    <TextView
+        android:id="@+id/query_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/query_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="query"/>
+</LinearLayout>

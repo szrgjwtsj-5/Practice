@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="标题一"
+        android:key="title_1">
+        <CheckBoxPreference
+            android:key="pref_sync"
+            android:title="选择框"
+            android:defaultValue="true"/>
+
+        <ListPreference
+            android:dependency="pref_sync"
+            android:key="pref_syncConnection"
+            android:title="列表"
+            android:dialogTitle="列表对话框"
+            android:entries="@array/list"
+            android:entryValues="@array/list"
+            android:defaultValue="Android 从入门到出门"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="标题二"
+        android:key="title_2">
+        <EditTextPreference
+            android:title="文本框"
+            android:textColor="@color/colorPrimary"
+            android:hint="input"
+            android:key="pref_input"/>
+        <!--<MultiSelectListPreference-->
+            <!--android:dependency="pref_sync"-->
+            <!--android:key="pref_syncConnection"-->
+            <!--android:title="多选列表"-->
+            <!--android:dialogTitle="列表对话框"-->
+            <!--android:entries="@array/list"-->
+            <!--android:entryValues="@array/list"-->
+            <!--android:defaultValue="Android 从入门到出门"/>-->
+        <PreferenceScreen
+            android:key="to_another"
+            android:persistent="false"
+            android:title="去另一屏">
+            <CheckBoxPreference
+                android:key="prefer_wifi"
+                android:title="Prefer WiFi" />
+            <SwitchPreference
+                android:key="open_close"
+                android:title="Open or Close"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="标题三"
+        android:key="title_3">
+        <RingtonePreference
+            android:icon="@drawable/leaf"
+            android:key="pref_ring"
+            android:title="提醒"
+            android:ringtoneType="notification"/>
+        <SwitchPreference
+            android:key="pref_switch"
+            android:title="开关"
+            android:defaultValue="true"/>
+        <Preference
+            android:title="Intent">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.whx.com"/>
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

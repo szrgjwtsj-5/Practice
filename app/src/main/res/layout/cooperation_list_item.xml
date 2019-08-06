@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/divider_grid"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#6745ee"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_cooperation_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#eeeeee"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:text="找门店"
+        android:textColor="#333333"
+        android:textSize="17sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#e7e7e7" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/gv_cooperation_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+    <!--<com.whx.practice.listgrid.ExpandGridView-->
+        <!--android:id="@+id/gv_cooperation_grid"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#ffffff"-->
+        <!--android:gravity="center"-->
+        <!--android:numColumns="2"-->
+        <!--android:scrollbars="none" />-->
+
+</LinearLayout>

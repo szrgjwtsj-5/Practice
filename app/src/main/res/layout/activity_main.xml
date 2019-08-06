@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.whx.practice.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:layout_centerInParent="true"/>
+    <Button
+        android:id="@+id/to_leak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="leak"/>
+    <Button
+        android:id="@+id/to_intent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/to_leak"
+        android:text="intent"/>
+    <Button
+        android:id="@+id/to_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/to_intent"
+        android:text="task"/>
+    <Button
+        android:id="@+id/to_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/to_task"
+        android:text="fragment"/>
+    <Button
+        android:id="@+id/to_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/to_leak"
+        android:text="loader"/>
+    <Button
+        android:id="@+id/to_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/to_loader"
+        android:layout_below="@+id/to_intent"
+        android:text="view"/>
+
+    <Button
+        android:id="@+id/to_another_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/to_view"
+        android:layout_below="@+id/to_task"
+        android:text="app"/>
+
+    <Button
+        android:id="@+id/to_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/to_another_app"
+        android:layout_below="@+id/to_fragment"
+        android:text="service"/>
+
+    <Button
+        android:id="@+id/to_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/to_loader"
+        android:text="schedule"/>
+    <Button
+        android:id="@+id/to_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/to_view"
+        android:layout_toRightOf="@+id/to_schedule"
+        android:text="content"/>
+
+    <Button
+        android:id="@+id/to_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/to_another_app"
+        android:layout_toRightOf="@+id/to_content"
+        android:text="setting"/>
+
+    <Button
+        android:id="@+id/to_simulate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/to_setting"
+        android:layout_below="@+id/to_service"
+        android:text="simulate"/>
+
+    <Button
+        android:id="@+id/to_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/to_schedule"
+        android:text="countdown"/>
+
+    <Button
+        android:id="@+id/to_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="test"/>
+
+</RelativeLayout>

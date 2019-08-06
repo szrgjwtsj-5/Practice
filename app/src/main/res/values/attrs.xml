@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BasicDisplayItemNew">
+        <attr name="titleColor" format="color"/>
+        <attr name="contentColor" format="color"/>
+        <attr name="iconShow" format="boolean"/>
+        <attr name="titleText" format="string"/>
+        <attr name="contentText" format="string"/>
+        <attr name="contentHint" format="string"/>
+        <attr name="contentState" format="integer">
+            <enum name="read_only" value="1"/>
+            <enum name="editable" value="2"/>
+            <enum name="clickable" value="3"/>
+        </attr>
+        <attr name="titleSize" format="dimension"/>
+        <attr name="contentSize" format="dimension"/>
+    </declare-styleable>
+
+</resources>

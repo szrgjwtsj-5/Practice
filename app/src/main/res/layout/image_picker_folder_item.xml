@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/bucket_cover"
+        android:scaleType="centerCrop"
+        android:layout_alignParentLeft="true"
+        android:background="#DFDFDF"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <TextView
+        android:id="@+id/bucket_name"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:layout_centerVertical="true"
+        android:textColor="#666666"
+        android:layout_toRightOf="@id/bucket_cover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/image_count"
+        android:textSize="16sp"
+        android:textColor="#999999"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/bucket_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/image_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/image_picker_album_selected"
+        android:visibility="gone"/>
+</RelativeLayout>

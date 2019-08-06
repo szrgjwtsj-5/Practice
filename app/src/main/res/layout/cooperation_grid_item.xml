@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp">
+
+    <ImageView
+        android:id="@+id/iv_grid_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_alignParentLeft="true"/>
+
+    <ImageView
+        android:id="@+id/divider_vertical"
+        android:layout_width="0.5dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="#e7e7e7" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_grid_icon"
+        android:layout_toLeftOf="@id/divider_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="9dp">
+
+        <TextView
+            android:id="@+id/tv_grid_describe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxWidth="105dp"
+            android:singleLine="true"
+            android:text="周边门店"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/grid_item_new"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_alignTop="@id/tv_grid_describe"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@id/tv_grid_describe"
+            android:background="#cc3638"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_grid_item_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_grid_describe"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="28/30"
+            android:textColor="#999999"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+
+
+    <ImageView
+        android:id="@+id/divider_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="#e7e7e7" />
+
+</RelativeLayout>

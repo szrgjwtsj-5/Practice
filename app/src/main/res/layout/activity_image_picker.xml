@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+                                       tools:ignore="UnusedAttribute"
+                                       android:id="@+id/choose_photo_toolbar"
+                                       android:background="#F7F7F7"
+                                       android:title="选图"
+                                       android:titleTextColor="#333333"
+                                       android:navigationIcon="@drawable/ic_back_navigation"
+                                       android:layout_width="match_parent"
+                                       android:layout_height="56dp"
+                                       android:elevation="4dp"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#D6D6D6">
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <GridView
+                    android:id="@+id/gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:horizontalSpacing="3dp"
+                    android:numColumns="3"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="3dp"
+                    tools:listitem="@layout/image_picker_grid_item"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFFFF">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentTop="true"
+                        android:background="#CCCCCC"/>
+
+
+                    <TextView
+                        android:id="@+id/btn_preview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="预览"
+                        android:textColor="@color/bg_blue"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/btn_complete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="下一步"
+                        android:textColor="@color/bg_blue"
+                        android:textSize="16sp"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/progress_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:visibility="gone">
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dip"
+                    android:singleLine="true"
+                    android:text="loading"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/album"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </FrameLayout>
+</LinearLayout>
