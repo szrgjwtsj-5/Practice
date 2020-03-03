@@ -105,8 +105,9 @@ public class PathTestView extends View{
         super.onDraw(canvas);
 
         canvas.translate(mWidth/2, mHeight/2);
+        testFish(canvas);
 
-        searchAnim(canvas);
+//        searchAnim(canvas);
     }
 
     private void testMoveTo(Canvas canvas) {

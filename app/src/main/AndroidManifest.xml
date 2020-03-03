@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 
     <application
@@ -123,6 +124,8 @@
         <activity android:name=".view.dialog.TestDialogActivity"/>
 
         <activity android:name=".countdown.TestCountdownActivity"/>
+
+        <activity android:name=".view.pager.CycleViewpagerActivity"/>
 
         <service android:name=".service.TestService">
 

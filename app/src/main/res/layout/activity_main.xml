@@ -109,4 +109,10 @@
         android:layout_centerHorizontal="true"
         android:text="test"/>
 
+    <com.whx.practice.view.BgFlashButton
+        android:id="@+id/tmp_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/to_countdown"/>
+
 </RelativeLayout>

@@ -176,6 +176,10 @@ dependencies {
     // 图片框架
     compile 'com.squareup.picasso:picasso:2.5.2'
 
+    compile ('com.github.bumptech.glide:glide:4.9.0') {
+        exclude group: 'com.android.support'
+    }
+
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 

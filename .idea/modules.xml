@@ -3,6 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Practice.iml" filepath="$PROJECT_DIR$/Practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/Practice-app.iml" filepath="$PROJECT_DIR$/app/Practice-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customlint/Practice-customlint.iml" filepath="$PROJECT_DIR$/customlint/Practice-customlint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mylibrary/Practice-mylibrary.iml" filepath="$PROJECT_DIR$/mylibrary/Practice-mylibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testplugin/Practice-testplugin.iml" filepath="$PROJECT_DIR$/testplugin/Practice-testplugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YY-Practice.iml" filepath="$PROJECT_DIR$/YY-Practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/customlint/customlint.iml" filepath="$PROJECT_DIR$/customlint/customlint.iml" />
       <module fileurl="file://$PROJECT_DIR$/mylibrary/mylibrary.iml" filepath="$PROJECT_DIR$/mylibrary/mylibrary.iml" />

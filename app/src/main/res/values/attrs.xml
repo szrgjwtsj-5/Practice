@@ -16,4 +16,10 @@
         <attr name="contentSize" format="dimension"/>
     </declare-styleable>
 
+    <declare-styleable name="CycleViewPager">
+        <attr name="canAutoTurning" format="boolean"/>
+        <attr name="turningTime" format="integer"/>
+    </declare-styleable>
+
+    <item name="innerViewPager" type="id"/>
 </resources>
