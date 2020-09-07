@@ -163,7 +163,7 @@ public class AlbumSelectFragment extends DialogFragment implements LoaderManager
                 // 设置Cover的缩略图和图片张数
                 File imageFile = new File(data.getString(data.getColumnIndex(MediaStore.Images.ImageColumns.DATA)));
                 if (imageFile.exists()) {
-                    Picasso.with(getActivity())
+                    Picasso.get()
                             .load(imageFile)
                             .into(holder.cover);
                     holder.count.setText("(" + data.getCount() + ")");

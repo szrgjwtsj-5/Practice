@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 
-import com.squareup.leakcanary.LeakCanary;
+//import com.squareup.leakcanary.LeakCanary;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -40,7 +40,7 @@ public class MyApplication extends Application{
         super.onCreate();
 
         instance = this;
-        LeakCanary.install(this);
+//        LeakCanary.install(this);
 
 //        logDumper = new LogDumper();
 //        logDumper.start();
